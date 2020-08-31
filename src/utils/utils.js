@@ -1,7 +1,6 @@
-const Utils = {
-  handleClasses(c,a = []) {
-    return a.map(i => i?`vant-${c}--${i}`:'').join(' ')
-  }
-}
+import myBem from './myBem'
 
-export default Utils
+export function createNamespace(name) {
+  name = `wmj-${name}`
+  return myBem(name)
+}
