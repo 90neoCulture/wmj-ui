@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import App from '../src/App.vue'
-import VantButton from '../src/components/button'
+import WmjButton from '../src/components/button'
+import { Icon } from 'vant'
 
+import 'vant/lib/index.css';
+import 'vant/lib/icon/local.css';
 import '../src/style/_variables.scss';
 // import '../src/style/style.scss';
 
+Vue.use(Icon)
 Vue.config.productionTip = false
-Vue.component('vant-button', VantButton)
+Vue.component('wmj-button', WmjButton)
 
 new Vue({
   render: h => h(App),

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <vant-button></vant-button>
-    <vant-button type="primary" size="large" text="确定" plain disabled loading round></vant-button>
-    <vant-button type="info" size="small" text="确定" square></vant-button>
-    <vant-button type="warning" size="mini" text="确定" block></vant-button>
-    <vant-button type="danger" text="确定"></vant-button>
+    <wmj-button></wmj-button>
+    <wmj-button type="primary" size="large" text="确定" icon="plus" plain disabled loading round></wmj-button>
+    <wmj-button type="info" size="small" text="确定" square></wmj-button>
+    <wmj-button type="warning" size="mini" text="确定" block></wmj-button>
+    <wmj-button type="danger" text="确定"></wmj-button>
   </div> 
 </template>
 

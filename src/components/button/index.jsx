@@ -1,7 +1,8 @@
 import './demo/index.scss';
 import {createNamespace} from '../../utils/utils'
+import { Icon } from 'vant'
 
-const VantButton = {
+const WmjButton = {
   functional: true,
   props: {
     tag: {
@@ -21,6 +22,10 @@ const VantButton = {
       default: 'normal'
     },
     color: {
+      type: String,
+      default: ''
+    },
+    icon: {
       type: String,
       default: ''
     },
@@ -61,6 +66,7 @@ const VantButton = {
       size,
       type,
       color,
+      icon,
       block,
       plain,
       square,
@@ -82,8 +88,18 @@ const VantButton = {
         hairline,
         loading
       }
-    ])
+    ]) + ' ' + myBem('icon')
     const contentClass = myBem('content')
+    const myContent = () => {
+      const content = []
+      if(icon){
+        content.push(<Icon name={icon} class={myBem('icon')} />)
+      }
+      if(text){
+        content.push(<span class={myBem('text')} >{text}</span>)
+      } 
+      return content
+    }
     return (
       <tag
       size={size} 
@@ -91,10 +107,12 @@ const VantButton = {
       color={color}
       class={classes}
       >
-        <div class={contentClass}><span class={myBem('text')}>{text}</span></div>
+        <div class={contentClass}>
+          {myContent()}
+        </div>
       </tag>
     )
   }
 }
 
-export default VantButton
+export default WmjButton
