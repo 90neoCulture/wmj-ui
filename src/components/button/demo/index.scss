@@ -14,6 +14,32 @@
   transition: opacity $animation-duration-fast;
   -webkit-appearance: none;
 
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: map-get($colors, 'black');
+    border: inherit;
+    border-color: map-get($colors, 'black');
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &--loading,
+  &--disabled {
+    &::before {
+      display: none;
+    }
+  }
+
   &--default {
     color: $button-default-color;
     background-color: $button-default-background-color;
@@ -42,6 +68,26 @@
     color: $button-warning-color;
     background-color: $button-warning-background-color;
     border: $button-border-width solid $button-warning-border-color;
+  }
+
+  &--plain {
+    background-color: $button-plain-background-color;
+
+    &.wmj-button--primary {
+      color: $button-primary-background-color;
+    }
+
+    &.wmj-button--info {
+      color: $button-info-background-color;
+    }
+
+    &.wmj-button--danger {
+      color: $button-danger-background-color;
+    }
+
+    &.wmj-button--warning {
+      color: $button-warning-background-color;
+    }
   }
 
   &--large {

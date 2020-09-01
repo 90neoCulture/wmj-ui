@@ -4,6 +4,10 @@ import {createNamespace} from '../../utils/utils'
 const VantButton = {
   functional: true,
   props: {
+    tag: {
+      type: String,
+      default: 'button'
+    },
     type: {
       type: String,
       default: 'default'
@@ -51,17 +55,20 @@ const VantButton = {
   },
   render: (h, v) => {
     const myBem = createNamespace('button')
-    const text = v.props.text
-    const size = v.props.size
-    const type = v.props.type
-    const color = v.props.color
-    const block = v.props.block
-    const plain = v.props.plain
-    const square = v.props.square
-    const round = v.props.round
-    const disabled = v.props.disabled
-    const hairline = v.props.hairline
-    const loading = v.props.loading
+    const {
+      tag,
+      text,
+      size,
+      type,
+      color,
+      block,
+      plain,
+      square,
+      round,
+      disabled,
+      hairline,
+      loading
+    } = v.props
     const classes = myBem([
       size,
       type,
@@ -78,14 +85,14 @@ const VantButton = {
     ])
     const contentClass = myBem('content')
     return (
-      <div
+      <tag
       size={size} 
       type={type}
       color={color}
       class={classes}
       >
         <div class={contentClass}><span class={myBem('text')}>{text}</span></div>
-      </div>
+      </tag>
     )
   }
 }
