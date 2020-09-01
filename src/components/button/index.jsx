@@ -1,6 +1,6 @@
 import './demo/index.scss';
 import {createNamespace} from '../../utils/utils'
-import { Icon } from 'vant'
+import { Icon, Loading } from 'vant'
 
 const WmjButton = {
   functional: true,
@@ -56,13 +56,24 @@ const WmjButton = {
     loading:{
       type: Boolean,
       default: false
+    },
+    loadingText:{
+      type: String,
+      default: ''
+    },
+    loadingType:{
+      type: String,
+      default: 'circular'
+    },
+    loadingSize:{
+      type: String,
+      default: '20px'
     }
   },
-  render: (h, v) => {
+  render: (h, context) => {
     const myBem = createNamespace('button')
     const {
       tag,
-      text,
       size,
       type,
       color,
@@ -73,8 +84,11 @@ const WmjButton = {
       round,
       disabled,
       hairline,
-      loading
-    } = v.props
+      loading,
+      loadingType,
+      loadingText,
+      loadingSize
+    } = context.props
     const classes = myBem([
       size,
       type,
@@ -88,12 +102,35 @@ const WmjButton = {
         hairline,
         loading
       }
-    ]) + ' ' + myBem('icon')
+    ])
     const contentClass = myBem('content')
     const myContent = () => {
       const content = []
+      if(loading){
+        content.push(
+          context.children
+            ? context.children
+            : (
+              <Loading 
+                class={myBem('loading')}
+                size={loadingSize}
+                type={loadingType}
+                color="currentColor"
+              />
+            )
+        )
+      }
+
       if(icon){
         content.push(<Icon name={icon} class={myBem('icon')} />)
+      }
+      // 在添加 functional: true 之后，需要更新我们的锚点标题组件的渲染函数，为其增加 context 参数，
+      // 并将 this.$slots.default 更新为 context.children，然后将 this.level 更新为 context.props.level。
+      let text
+      if(loading){
+        text = loadingText
+      }else{
+        text = context.children ? context.children : context.props.text
       }
       if(text){
         content.push(<span class={myBem('text')} >{text}</span>)
