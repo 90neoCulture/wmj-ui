@@ -51,13 +51,13 @@
     </div>
     <div class="card">
       <p>块级元素</p>
-      <wmj-button type="primary" block>块级元素</wmj-button>
+      <wmj-button type="primary" block @click="handleClick">块级元素</wmj-button>
     </div>
-    <!-- <div class="card">
+    <div class="card">
       <p>页面导航</p>
       <wmj-button type="primary" url="/vant/mobile.html">URL 跳转</wmj-button>
       <wmj-button type="primary" to="index">路由跳转</wmj-button>
-    </div> -->
+    </div>
     <!-- <div class="card">
       <p>自定义颜色</p>
       <wmj-button color="#7232dd">单色按钮</wmj-button>
@@ -71,7 +71,11 @@
 
 <script>
 export default {
-
+  methods: {
+    handleClick() {
+      alert(232)
+    }
+  }
 }
 </script>
 

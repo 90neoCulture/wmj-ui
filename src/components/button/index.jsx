@@ -68,6 +68,17 @@ const WmjButton = {
     loadingSize:{
       type: String,
       default: '20px'
+    },
+    to: {
+
+    },
+    url: {
+      type: String,
+      default: ''
+    },
+    replace: {
+      type: Boolean,
+      default: false
     }
   },
   render: (h, context) => {
@@ -137,12 +148,45 @@ const WmjButton = {
       } 
       return content
     }
+
+    const onClick = (e) => {
+      if(loading || disabled){
+        return;
+      }
+      emit(context, 'click', e)
+      handleRoute(context)
+    }
+
+    function emit(context, eventName, ...args){
+      const listeners = context.listeners[eventName]
+
+      if(listeners){
+        if(Array.isArray(listeners)){
+          listeners.forEach(listener => {
+            listener(...args)
+          })
+        }else {
+          listeners(...args)
+        }
+      }
+    }
+
+    function handleRoute(context){
+      const routes = context.data && context.data.attrs
+      if(routes.to){
+        context.$router[routes.replace ? 'replace' : 'push'](routes.to)
+      } else if(routes.url){
+        routes.replace ? location.replace(routes.url) : location.href = routes.url
+      }
+    }
+
     return (
       <tag
       size={size} 
       type={type}
       color={color}
       class={classes}
+      onClick={onClick}
       >
         <div class={contentClass}>
           {myContent()}
