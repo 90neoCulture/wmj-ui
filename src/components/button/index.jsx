@@ -69,9 +69,7 @@ const WmjButton = {
       type: String,
       default: '20px'
     },
-    to: {
-
-    },
+    to: [String, Array],
     url: {
       type: String,
       default: ''
@@ -114,6 +112,22 @@ const WmjButton = {
         loading
       }
     ])
+    const style = {}
+    if(color){
+      style.color = plain ? color : 'white'
+
+      if(!plain) {
+        style.background = color
+      }
+
+      if (color.indexOf('gradient') !== -1) {
+        style.border = 0
+      } else {
+        style.borderColor = color
+      }
+    }
+    
+
     const contentClass = myBem('content')
     const myContent = () => {
       const content = []
@@ -157,6 +171,13 @@ const WmjButton = {
       handleRoute(context)
     }
 
+    const onTouchstart = (e) => {
+      if(loading || disabled){
+        return;
+      }
+      emit(context, onTouchstart, e)
+    }
+
     function emit(context, eventName, ...args){
       const listeners = context.listeners[eventName]
 
@@ -172,21 +193,24 @@ const WmjButton = {
     }
 
     function handleRoute(context){
-      const routes = context.data && context.data.attrs
-      if(routes.to){
-        context.$router[routes.replace ? 'replace' : 'push'](routes.to)
-      } else if(routes.url){
-        routes.replace ? location.replace(routes.url) : location.href = routes.url
+      const router = context.parent && context.parent.$router
+      const { to, replace, url} = context.props
+      if(to){
+        router[replace ? 'replace' : 'push'](to)
+      } else if(url){
+        replace ? location.replace(url) : location.href = url
       }
     }
 
     return (
       <tag
+      style={style}
       size={size} 
       type={type}
       color={color}
       class={classes}
       onClick={onClick}
+      onTouchstart={onTouchstart}
       >
         <div class={contentClass}>
           {myContent()}

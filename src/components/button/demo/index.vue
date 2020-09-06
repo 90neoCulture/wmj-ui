@@ -58,14 +58,14 @@
       <wmj-button type="primary" url="/vant/mobile.html">URL 跳转</wmj-button>
       <wmj-button type="primary" to="index">路由跳转</wmj-button>
     </div>
-    <!-- <div class="card">
+    <div class="card">
       <p>自定义颜色</p>
       <wmj-button color="#7232dd">单色按钮</wmj-button>
       <wmj-button color="#7232dd" plain>单色按钮</wmj-button>
       <wmj-button color="linear-gradient(to right, #ff6034, #ee0a24)">
         渐变色按钮
       </wmj-button>
-    </div> -->
+    </div>
   </div> 
 </template>
 
