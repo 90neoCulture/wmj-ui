@@ -1,4 +1,4 @@
-import './demo/index.scss';
+import './index.scss';
 import {createNamespace} from '../../utils/utils'
 import { Icon, Loading } from 'vant'
 

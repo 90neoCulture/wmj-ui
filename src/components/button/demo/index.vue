@@ -80,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'index.scss';
+@import '../index.scss';
 
 .card{
   width: 80%;
