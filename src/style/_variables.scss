@@ -114,3 +114,31 @@ $button-border-radius: $border-radius-sm;
 $button-round-border-radius: $border-radius-max;
 $button-plain-background-color: map-get($colors, 'white');
 $button-disabled-opacity: $disabled-opacity;
+
+// Cell
+$cell-font-size: $font-size-md;
+$cell-line-height: 24px;
+$cell-vertical-padding: 10px;
+$cell-horizontal-padding: $padding-md;
+$cell-text-color: $text-color;
+$cell-background-color: map-get($colors, 'white');
+$cell-border-color: $border-color;
+$cell-active-color: $active-color;
+$cell-required-color: map-get($colors, 'red');
+$cell-label-color: map-get($colors, 'gray-6');
+$cell-label-font-size: $font-size-sm;
+$cell-label-line-height: $line-height-sm;
+$cell-label-margin-top: $padding-base;
+$cell-value-color: map-get($colors, 'gray-6');
+$cell-icon-size: 16px;
+$cell-right-icon-color: map-get($colors, 'gray-6');
+$cell-large-vertical-padding: $padding-sm;
+$cell-large-title-font-size: $font-size-lg;
+$cell-large-label-font-size: $font-size-md;
+
+// CellGroup
+$cell-group-background-color: map-get($colors, 'white');
+$cell-group-title-color: map-get($colors, 'gray-6');
+$cell-group-title-padding: $padding-md $padding-md $padding-xs;
+$cell-group-title-font-size: $font-size-md;
+$cell-group-title-line-height: 16px;

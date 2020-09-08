@@ -3,6 +3,7 @@ import App from '../src/App.vue'
 import router from '../router'
 import WmjButton from '../src/components/button'
 import WmjCell from '../src/components/cell'
+import WmjCellGroup from '../src/components/cell-group'
 import { Icon, Loading } from 'vant'
 
 import 'vant/lib/index.css';
@@ -14,6 +15,7 @@ Vue.use(Icon, Loading)
 Vue.config.productionTip = false
 Vue.component('wmj-button', WmjButton)
 Vue.component('wmj-cell', WmjCell)
+Vue.component('wmj-cell-group', WmjCellGroup)
 
 new Vue({
   router,

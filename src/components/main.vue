@@ -20,6 +20,8 @@ export default {
       menuList: [
         {id: 1, name: 'Button按钮',url: '/button'},
         {id: 2, name: 'Cell单元格',url: '/cell'},
+        {id: 3, name: 'Icon图标',url: '/icon'},
+        {id: 4, name: 'Image图片',url: '/image'},
       ]
     }
   },
@@ -39,6 +41,7 @@ export default {
   overflow-y: auto;
   .item{
     line-height: 40px;
+    text-align: center;
     &:hover{
       cursor: pointer;
     }
