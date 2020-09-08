@@ -1,5 +1,6 @@
 import './index.scss';
 import { createNamespace } from '../../utils/utils'
+import { BORDER_TOP_BOTTOM } from '../../utils/constant'
 
 const cellGroup = {
   functional: true,
@@ -16,20 +17,24 @@ const cellGroup = {
   render: (h, context) => {
     const myBem = createNamespace('cell-group')
 
-    const title = context.props.title
-    // const classes = myBem([
-    //   {
-    //     title: title
-    //   }
-    // ])
-    console.log(h)
-    console.log(context)
-    return (
-      <div
-      class={myBem('title')}
-      >{title}
+    const title = context.children ? context.children : context.props.title
+
+    const Group =  (
+      <div class={BORDER_TOP_BOTTOM}>
+        {context.children}
       </div>
     )
+
+    if(title) {
+      return (
+        <div>
+          <div class={myBem('title')}>{title}</div>
+          { Group }
+        </div>
+      )
+    }
+    
+    return Group
   }
 }
 
