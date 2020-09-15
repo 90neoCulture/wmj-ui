@@ -16,7 +16,7 @@ export default {
   name: 'Main',
   data(){
     return{
-      currentIndex: 0,
+      currentIndex: 1,
       menuList: [
         {id: 1, name: 'Button按钮',url: '/button'},
         {id: 2, name: 'Cell单元格',url: '/cell'},
@@ -32,7 +32,7 @@ export default {
     }
   },
   created(){
-    if(this.$route.path !== this.menuList[0].url) this.$router.push(this.menuList[0].url)
+    if(this.$route.path !== this.menuList[this.currentIndex].url) this.$router.push(this.menuList[this.currentIndex].url)
   }
 }
 </script>

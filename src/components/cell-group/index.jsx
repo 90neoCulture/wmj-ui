@@ -17,10 +17,10 @@ const cellGroup = {
   render: (h, context) => {
     const myBem = createNamespace('cell-group')
 
-    const title = context.children ? context.children : context.props.title
-
+    const title = (typeof context.children === String && context.children) ? context.children : context.props.title
+    
     const Group =  (
-      <div class={BORDER_TOP_BOTTOM}>
+      <div class={[myBem(), { [BORDER_TOP_BOTTOM]: context.props.border }]}>
         {context.children}
       </div>
     )

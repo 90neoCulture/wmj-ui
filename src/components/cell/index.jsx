@@ -1,9 +1,13 @@
-import { Tag } from "vant"
-// import { createNamespace } from '../../utils/myBem'
+import './index.scss'
+import { createNamespace } from '../../utils/utils'
 
 const WmjCell = {
   functional: true,
   props: {
+    tag: {
+      type: String,
+      default: 'div'
+    },
     title: [Number, String],
     value: [Number, String],
     label: {
@@ -57,29 +61,59 @@ const WmjCell = {
     }
   },
   render: (h, context) => {
-    // const myBem = createNamespace('button')
+    const myBem = createNamespace('cell')
     const {
-      title,
-      value,
-      label,
+      tag,
       size,
       icon,
       iconPrefix
     } = context.props
-    console.log(
-      title,
-      value,
-      label,
+    const classes = myBem([
       size,
       icon,
-      iconPrefix)
+      iconPrefix
+    ])
+    console.log(
+      // size,
+      // icon,
+      // iconPrefix,
+      classes)
+
+    const myContent = () => {
+      const content = []
+
+      const title = context.children ? context.children : context.props.title
+      const label = context.props.label
+      if(title) {
+        label 
+          ? content.push(
+              <div class={myBem('title')}>
+                <span>{title}</span>
+                <div class={myBem('label')}>{label}</div>
+              </div>
+            )
+          : content.push(
+              <div class={myBem('title')}>
+                <span>{title}</span>
+              </div>
+            )
+      }
+
+      const value = context.props.value
+      if(value) {
+        content.push(<span class={myBem('value')}>{value}</span>)
+      }
+
+      return content
+    }
+    
 
     return (
-      <Tag
-      class="{classes}"
+      <tag
+        class={classes}
       >
-
-      </Tag>
+        {myContent()}
+      </tag>
     )
   }
 }

@@ -1,10 +1,12 @@
 <template>
   <div>
+    <h4>基础用法</h4>
     <wmj-cell-group>
       <wmj-cell title="单元格" value="内容" />
       <wmj-cell title="单元格" value="内容" label="描述信息" />
     </wmj-cell-group>
 
+    <h4>单元格大小</h4>
     <wmj-cell title="单元格" value="内容" size="large" />
     <wmj-cell
       title="单元格"
@@ -12,11 +14,13 @@
       size="large"
       label="描述信息"
     />
-
+    <h4>展示图标</h4>
     <wmj-cell title="单元格" value="内容" icon="location-o" />
 
+    <h4>只设置 value</h4>
     <wmj-cell value="内容" />
 
+    <h4>展示箭头</h4>
     <wmj-cell title="单元格" is-link />
     <wmj-cell title="单元格" is-link value="内容" />
     <wmj-cell

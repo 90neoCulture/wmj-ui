@@ -204,13 +204,13 @@ const WmjButton = {
 
     return (
       <tag
-      style={style}
-      size={size} 
-      type={type}
-      color={color}
-      class={classes}
-      onClick={onClick}
-      onTouchstart={onTouchstart}
+        style={style}
+        size={size} 
+        type={type}
+        color={color}
+        class={classes}
+        onClick={onClick}
+        onTouchstart={onTouchstart}
       >
         <div class={contentClass}>
           {myContent()}
