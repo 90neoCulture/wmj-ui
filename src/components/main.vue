@@ -28,8 +28,11 @@ export default {
   methods: {
     handleJump(item, index){
       this.currentIndex = index
-      this.$router.push(item.url)
+      if(this.$route.path !== item.url) this.$router.push(item.url)
     }
+  },
+  created(){
+    if(this.$route.path !== this.menuList[0].url) this.$router.push(this.menuList[0].url)
   }
 }
 </script>

@@ -1,3 +1,6 @@
+import { Tag } from "vant"
+// import { createNamespace } from '../../utils/myBem'
+
 const WmjCell = {
   functional: true,
   props: {
@@ -54,7 +57,30 @@ const WmjCell = {
     }
   },
   render: (h, context) => {
-    console.log(h, context)
+    // const myBem = createNamespace('button')
+    const {
+      title,
+      value,
+      label,
+      size,
+      icon,
+      iconPrefix
+    } = context.props
+    console.log(
+      title,
+      value,
+      label,
+      size,
+      icon,
+      iconPrefix)
+
+    return (
+      <Tag
+      class="{classes}"
+      >
+
+      </Tag>
+    )
   }
 }
 
