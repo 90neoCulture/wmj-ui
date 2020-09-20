@@ -20,5 +20,7 @@ yarn build
 yarn lint
 ```
 
+思维导图请参考 wmj-ui.xmind
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,6 +1,6 @@
 import './index.scss';
-import { createNamespace } from '../../utils/utils'
-import { BORDER_TOP_BOTTOM } from '../../utils/constant'
+import { createNamespace } from '../utils/utils'
+import { BORDER_TOP_BOTTOM } from '../utils/constant'
 
 const cellGroup = {
   functional: true,

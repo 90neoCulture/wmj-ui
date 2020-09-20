@@ -1,5 +1,5 @@
 import './index.scss';
-import {createNamespace} from '../../utils/utils'
+import {createNamespace} from '../utils/utils'
 import { Icon, Loading } from 'vant'
 
 const WmjButton = {

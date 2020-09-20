@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../style/_variables';
+@import '../../style/_variables';
 
 .demo-button {
   .wmj-button {

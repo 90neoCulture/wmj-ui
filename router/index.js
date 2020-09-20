@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '../src/components/main'
-import Button from '../src/components/button/demo'
-import Cell from '../src/components/cell/demo'
-import Icon from '../src/components/icon/demo'
-import Image from '../src/components/image/demo'
+import Main from '../src/main'
+import Button from '../src/button/demo'
+import Cell from '../src/cell/demo'
+import Icon from '../src/icon/demo'
+import Image from '../src/image/demo'
 
 Vue.use(VueRouter)
 
