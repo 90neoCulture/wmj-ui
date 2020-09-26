@@ -1,45 +1,45 @@
 <template>
-  <demo-section>
+  <div>
     <van-tabs v-model="tab" sticky>
-      <van-tab title="'demo'">
-        <demo-block :title="t('basicUsage')">
+      <van-tab :title="t('demo')">
+        <div :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
-            <van-icon :name="demoIcon" />
+            <wmj-icon :name="demoIcon" />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
-            <van-icon :name="demoImage" />
+            <wmj-icon :name="demoImage" />
           </van-col>
-        </demo-block>
+        </div>
 
-        <demo-block :title="t('badge')">
+        <div :title="t('badge')">
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
-            <van-icon :name="demoIcon" dot />
+            <wmj-icon :name="demoIcon" dot />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { badge: '9' })">
-            <van-icon :name="demoIcon" badge="9" />
+            <wmj-icon :name="demoIcon" badge="9" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { badge: '99+' })">
-            <van-icon :name="demoIcon" badge="99+" />
+            <wmj-icon :name="demoIcon" badge="99+" />
           </van-col>
-        </demo-block>
+        </div>
 
-        <demo-block :title="t('color')">
+        <div :title="t('color')">
           <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
-            <van-icon :name="demoIcon" :color="BLUE" />
+            <wmj-icon :name="demoIcon" :color="BLUE" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
-            <van-icon :name="demoIcon" :color="GREEN" />
+            <wmj-icon :name="demoIcon" :color="GREEN" />
           </van-col>
-        </demo-block>
+        </div>
 
-        <demo-block :title="t('size')">
+        <div :title="t('size')">
           <van-col span="6" @click="copy(demoIcon, { size: '40' })">
-            <van-icon :name="demoIcon" size="40" />
+            <wmj-icon :name="demoIcon" size="40" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
-            <van-icon :name="demoIcon" size="3rem" />
+            <wmj-icon :name="demoIcon" size="3rem" />
           </van-col>
-        </demo-block>
+        </div>
       </van-tab>
 
       <van-tab :title="t('basic')">
@@ -49,7 +49,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <wmj-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
@@ -61,7 +61,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <wmj-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
@@ -73,19 +73,35 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <wmj-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
     </van-tabs>
-  </demo-section>
+  </div>
 </template>
 
 <script>
 import icons from '@vant/icons';
 import { BLUE, GREEN } from '../../utils/constant';
+import Vue from 'vue'
+import { Tabs, Tab } from 'vant'
+Vue.use(Tabs).use(Tab)
+import { Col } from 'vant'
+Vue.use(Col)
+// import Tabs from 'vant/lib/tabs';
+// import Tab from 'vant/lib/tab';
+// import Col from 'vant/lib/col';
+// import 'vant/lib/tabs/style';
+// import 'vant/lib/tab/style';
+// import 'vant/lib/col/style';
 
 export default {
+  // components: {
+  //   'van-tabs': Tabs,
+  //   'van-tab': Tab,
+  //   'van-col': Col,
+  // },
   i18n: {
     'zh-CN': {
       title: '图标列表',
