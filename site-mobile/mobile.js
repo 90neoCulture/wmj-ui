@@ -6,17 +6,13 @@ import WmjCell from '../src/cell'
 import WmjCellGroup from '../src/cell-group'
 import WmjIcon from '../src/icon'
 import WmjImage from '../src/image'
-import { Icon, Loading, Tab, Tabs, Col } from 'vant'
 import Locale from '../src/locale'
 import zhCN from '../src/locale/lang/zh-CN'
 import { get } from '../src/utils/utils'
 import { camelize } from '../src/utils/format/string'
 
-import 'vant/lib/index.css';
-import 'vant/lib/icon/local.css';
 import '../src/style/_variables.scss';
 
-Vue.use(Icon, Loading, Tab, Tabs, Col )
 Vue.config.productionTip = false
 Vue.component('wmj-button', WmjButton)
 Vue.component('wmj-cell', WmjCell)
@@ -24,10 +20,11 @@ Vue.component('wmj-cell-group', WmjCellGroup)
 Vue.component('wmj-icon', WmjIcon)
 Vue.component('wmj-image', WmjImage)
 
-console.log(Locale, zhCN)
 Locale.add({
   'zh-CN': zhCN,
 })
+
+let demoUid = 0;
 
 Vue.mixin({
   computed: {
@@ -41,6 +38,24 @@ Vue.mixin({
         const message = get(messages, prefix + path) || get(messages, path)
         return typeof message === 'function' ? message(...args) : message
       }
+    }
+  },
+  beforeCreate() {
+    if (!this.$options.name) {
+      this.$options.name = `demo-${demoUid++}`
+    }
+
+    const { i18n, name } = this.$options
+
+    if(i18n && name) {
+      const locales = {}
+      const camelizedName = camelize(name)
+
+      Object.keys(i18n).forEach(key => {
+        locales[key] = { [camelizedName]: i18n[key] }
+      })
+
+      Locale.add(locales)
     }
   }
 })
