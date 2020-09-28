@@ -16,7 +16,7 @@ export default {
   name: 'Main',
   data(){
     return{
-      currentIndex: 1,
+      currentIndex: 2,
       menuList: [
         {id: 1, name: 'Button按钮',url: '/button'},
         {id: 2, name: 'Cell单元格',url: '/cell'},
