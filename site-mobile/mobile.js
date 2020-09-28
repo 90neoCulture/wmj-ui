@@ -13,6 +13,10 @@ import { camelize } from '../src/utils/format/string'
 
 import '../src/style/_variables.scss';
 
+import 'vant/lib/tab/style';
+import 'vant/lib/tabs/style';
+import 'vant/lib/col/style';
+
 Vue.config.productionTip = false
 Vue.component('wmj-button', WmjButton)
 Vue.component('wmj-cell', WmjCell)
