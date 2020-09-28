@@ -4,34 +4,29 @@ const [createComponent, myBem] = createNamespace('icon')
 
 function Icon(h, context, slots, ctx) {
   
-  console.log(createComponent)
-  console.log(slots)
-  console.log(ctx)
-  // const haha = 'haha'
-  console.log(h, context)
-  console.log(myBem)
-  const {
-    name,
-    // dot,
-    // badge,
-    // info, //废弃
-    // color,
-    // size,
-    // classPrefix,
-    tag
-  } = context.props
+  console.log(slots, ctx, h, context, myBem)
+  const haha = 'haha'
+  // const {
+  //   name,
+  //   // dot,
+  //   // badge,
+  //   // info, //废弃
+  //   // color,
+  //   // size,
+  //   // classPrefix,
+  //   tag
+  // } = context.props
   
-  // function isImage(){
-  //   return name ? name.indexOf('/') === -1 : false
-  // }
+  // // function isImage(){
+  // //   return name ? name.indexOf('/') === -1 : false
+  // // }
   
-    const classes = myBem([
-      name,
-    ])
+  //   const classes = myBem([
+  //     name,
+  //   ])
     return (
     <tag 
-    classes={classes}
-    ></tag>
+    >{haha}</tag>
     )
 }
 
