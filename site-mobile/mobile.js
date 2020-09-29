@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import App from '../src/App.vue'
 import router from '../router'
-import WmjButton from '../src/button'
-import WmjCell from '../src/cell'
-import WmjCellGroup from '../src/cell-group'
-import WmjIcon from '../src/icon'
-import WmjImage from '../src/image'
 import Locale from '../src/locale'
 import zhCN from '../src/locale/lang/zh-CN'
 import { get } from '../src/utils/utils'
@@ -18,11 +13,6 @@ import 'vant/lib/tabs/style';
 import 'vant/lib/col/style';
 
 Vue.config.productionTip = false
-Vue.component('wmj-button', WmjButton)
-Vue.component('wmj-cell', WmjCell)
-Vue.component('wmj-cell-group', WmjCellGroup)
-Vue.component('wmj-icon', WmjIcon)
-Vue.component('wmj-image', WmjImage)
 
 Locale.add({
   'zh-CN': zhCN,

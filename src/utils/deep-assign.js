@@ -17,7 +17,6 @@ function assignKey(to, from, key){
 }
 
 export function deepAssign(to, from){
-  console.log(from)
   Object.keys(from).forEach(key => {
     assignKey(to, from, key)
   })
