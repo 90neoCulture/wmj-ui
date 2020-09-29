@@ -30,3 +30,27 @@ export function get(object, path) {
 
   return result
 }
+
+export function emit(context, eventName, ...args){
+  const listeners = context.listeners[eventName]
+
+  if(listeners){
+    if(Array.isArray(listeners)){
+      listeners.forEach(listener => {
+        listener(...args)
+      })
+    }else {
+      listeners(...args)
+    }
+  }
+}
+
+export function handleRoute(ctx){
+  const router = ctx.parent && ctx.parent.$router
+  const { to, replace, url} = ctx
+  if(to){
+    router[replace ? 'replace' : 'push'](to)
+  } else if(url){
+    replace ? location.replace(url) : location.href = url
+  }
+}

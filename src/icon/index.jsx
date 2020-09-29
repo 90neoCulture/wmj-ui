@@ -4,7 +4,7 @@ const [createComponent, myBem] = createNamespace('icon')
 
 function Icon(h, context, slots, ctx) {
   
-  console.log(slots, ctx, h, context, myBem)
+  // console.log(slots, ctx, h, context, myBem)
   const haha = 'haha'
   // const {
   //   name,
