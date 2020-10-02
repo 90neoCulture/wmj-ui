@@ -73,11 +73,6 @@ const WmjCell = {
       icon,
       iconPrefix
     ])
-    console.log(
-      // size,
-      // icon,
-      // iconPrefix,
-      classes)
 
     const myContent = () => {
       const content = []

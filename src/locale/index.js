@@ -2,7 +2,6 @@ import Vue from 'vue'
 import { deepAssign } from '../utils/deep-assign'
 import defaultMessages from './lang/zh-CN'
 
-console.log(Vue.prototype)
 const proto = Vue.prototype
 const { defineReactive } = Vue.util
 
@@ -22,8 +21,6 @@ export default {
   // },
 
   add(messages = {}) {
-    console.log(proto.$wmjMessages)
-    console.log(messages)
     deepAssign(proto.$wmjMessages, messages)
   }
 }

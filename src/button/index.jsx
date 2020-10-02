@@ -6,7 +6,6 @@ import { Icon, Loading } from 'vant'
 const [createComponent, myBem] = createNamespace('button')
 
 function Button(h, context, slots, ctx) {
-  // console.log(h, context, slots, ctx)
   const {
     tag,
     size,

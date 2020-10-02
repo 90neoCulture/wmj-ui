@@ -1,16 +1,16 @@
-import Button from '../src/button'
-import Cell from '../src/cell'
-import CellGroup from '../src/cell-group'
-import Icon from '../src/icon'
-import Image from '../src/image'
+import WmjButton from '../src/button'
+import WmjCell from '../src/cell'
+import WmjCellGroup from '../src/cell-group'
+import WmjIcon from '../src/icon'
+import WmjImage from '../src/image'
 
 function install(Vue) {
     const components = [
-        Button,
-        Cell,
-        CellGroup,
-        Icon,
-        Image
+        WmjButton,
+        WmjCell,
+        WmjCellGroup,
+        WmjIcon,
+        WmjImage
     ]
 
     components.forEach(Component => {
@@ -24,9 +24,9 @@ if(typeof window !== 'undefined' && window.Vue) {
 
 export {
     install,
-    Button,
-    Cell,
-    CellGroup,
-    Icon,
-    Image
+    WmjButton,
+    WmjCell,
+    WmjCellGroup,
+    WmjIcon,
+    WmjImage
 }
