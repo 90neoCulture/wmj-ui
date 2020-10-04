@@ -5,7 +5,7 @@ import { Icon, Loading } from 'vant'
 
 const [createComponent, myBem] = createNamespace('button')
 
-function Button(h, context, slots, ctx) {
+function Button(h, props, slots, ctx) {
   const {
     tag,
     size,
@@ -22,7 +22,7 @@ function Button(h, context, slots, ctx) {
     loadingType,
     loadingText,
     loadingSize
-  } = context
+  } = props
   const classes = myBem([
     size,
     type,
@@ -80,7 +80,7 @@ function Button(h, context, slots, ctx) {
     if(loading){
       text = loadingText
     }else{
-      text = ctx.children ? ctx.children : context.text
+      text = ctx.children ? ctx.children : props.text
     }
     if(text){
       content.push(<span class={myBem('text')} >{text}</span>)

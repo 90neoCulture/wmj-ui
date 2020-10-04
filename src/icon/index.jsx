@@ -2,30 +2,30 @@ import { createNamespace } from "../utils/create"
 
 const [createComponent, myBem] = createNamespace('icon')
 
-function Icon(h, context, slots, ctx) {
-  console.log(slots, ctx)
+function Icon(h, props, slots, ctx) {
+  console.log(h, props, slots, ctx,myBem)
   const haha = 'haha'
-  const {
-    name,
-    // dot,
-    // badge,
-    // info, //废弃
-    // color,
-    // size,
-    // classPrefix,
-    tag
-  } = context.props
+  // const {
+  //   name,
+  //   // dot,
+  //   // badge,
+  //   // // info, //废弃
+  //   // color,
+  //   // size,
+  //   // classPrefix,
+  //   tag
+  // } = context.props
   
   // function isImage(){
   //   return name ? name.indexOf('/') === -1 : false
   // }
   
-    const classes = myBem([
-      name,
-    ])
+    // const classes = myBem([
+    //   name
+    // ])
     return (
     <tag 
-    class={classes}
+    // class={classes}
     >{haha}</tag>
     )
 }
