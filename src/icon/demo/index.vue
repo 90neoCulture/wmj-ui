@@ -6,12 +6,12 @@
           <van-col span="6" @click="copy(demoIcon)">
             <wmj-icon :name="demoIcon" />
           </van-col>
-          <!-- <van-col span="6" @click="copy(demoImage)">
+          <van-col span="6" @click="copy(demoImage)">
             <wmj-icon :name="demoImage" />
-          </van-col> -->
+          </van-col>
         </div>
 
-        <!-- <div :title="t('badge')">
+        <div :title="t('badge')">
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
             <wmj-icon :name="demoIcon" dot />
           </van-col>
@@ -39,10 +39,10 @@
           <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
             <wmj-icon :name="demoIcon" size="3rem" />
           </van-col>
-        </div> -->
+        </div>
       </van-tab>
 
-      <!-- <van-tab :title="t('basic')">
+      <van-tab :title="t('basic')">
         <van-col
           v-for="icon in icons.basic"
           :key="icon"
@@ -76,7 +76,7 @@
           <wmj-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
-      </van-tab> -->
+      </van-tab>
     </van-tabs>
   </div>
 </template>

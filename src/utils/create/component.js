@@ -21,7 +21,7 @@ export function unifySlots(context) {
   })
 }
 
-export function transformFunctionComponent(pure) {
+function transformFunctionComponent(pure) {
   return {
     functional: true,
     props: pure.props,
