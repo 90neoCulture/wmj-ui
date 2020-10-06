@@ -1,9 +1,9 @@
-import { isFunction } from '../utils'
+import { isFunction } from '../utils.js'
 import SlotsMixin from '../../mixins/slots'
 import { camelize } from '../format/string'
 
 // eslint-disable-next-line
-export function install(vueThis, Vue) {
+function install(vueThis, Vue) {
   const { name } = vueThis
   Vue.component(name, vueThis)
   Vue.component(camelize(`-${name}`), vueThis)

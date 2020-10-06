@@ -11,8 +11,8 @@ module.exports = {
       "parser": "babel-eslint"
     },
     "rules": {
-        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        "vue/no-unused-components": 'off' //这个是去除组件不重用的规则
+        'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+        "vue/no-unused-components": 0 //这个是去除组件不重用的规则
     }
 }

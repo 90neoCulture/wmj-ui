@@ -114,6 +114,7 @@ Locale.add({
   },
 });
 
+
 import WmjButton from '../src/button'
 // import WmjCell from '../src/cell'
 // import WmjCellGroup from '../src/cell-group'
@@ -129,8 +130,13 @@ function install(Vue) {
         // WmjImage
     ]
 
-    components.forEach(Component => {
-        Vue.use(Component)
+    components.forEach(item => {
+      if(item.install){
+        Vue.use(item)
+      } else {
+        Vue.component(item.name, item)
+      }
+      
     })
 }
 
@@ -146,6 +152,7 @@ export {
     // WmjIcon,
     // WmjImage
 }
+
 
 new Vue({
   router,
