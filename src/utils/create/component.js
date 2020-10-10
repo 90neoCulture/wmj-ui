@@ -1,12 +1,13 @@
 import { isFunction } from '../utils.js'
-import SlotsMixin from '../../mixins/slots'
-import { camelize } from '../format/string'
+import { SlotsMixin } from '../../mixins/slots'
+import WmjButton from '../../button'
+// import { camelize } from '../format/string'
 
 // eslint-disable-next-line
-function install(vueThis, Vue) {
-  const { name } = vueThis
-  Vue.component(name, vueThis)
-  Vue.component(camelize(`-${name}`), vueThis)
+function install(Vue) {
+  // const { name } = vueThis
+  Vue.component('wmj-button', WmjButton)
+  // Vue.component(camelize(`-${name}`), Vue)
 }
 
 export function unifySlots(context) {
@@ -26,9 +27,7 @@ function transformFunctionComponent(pure) {
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context) => {
-      pure(h, context.props, unifySlots(context), context)
-    }
+    render: (h, context) => pure(h, context.props, unifySlots(context), context)
   }
 }
 

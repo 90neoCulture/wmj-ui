@@ -121,38 +121,38 @@ import WmjButton from '../src/button'
 // import WmjIcon from '../src/icon'
 // import WmjImage from '../src/image'
 
-function install(Vue) {
-    const components = [
-        WmjButton,
-        // WmjCell,
-        // WmjCellGroup,
-        // WmjIcon,
-        // WmjImage
-    ]
+Vue.use(WmjButton)
+// function install(Vue) {
+//     const components = [
+//         WmjButton,
+//         // WmjCell,
+//         // WmjCellGroup,
+//         // WmjIcon,
+//         // WmjImage
+//     ]
 
-    components.forEach(item => {
-      if(item.install){
-        Vue.use(item)
-      } else {
-        Vue.component(item.name, item)
-      }
+//     components.forEach(item => {
+//       if(item.install){
+//         Vue.use(item)
+//       } else {
+//         Vue.component(item.name, item)
+//       }
       
-    })
-}
+//     })
+// }
 
-if(typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue)
-}
+// // if(typeof window !== 'undefined' && window.Vue) {
+// //   install(window.Vue)
+// // }
 
-export {
-    install,
-    WmjButton,
-    // WmjCell,
-    // WmjCellGroup,
-    // WmjIcon,
-    // WmjImage
-}
-
+// export {
+//     install,
+//     WmjButton,
+//     // WmjCell,
+//     // WmjCellGroup,
+//     // WmjIcon,
+//     // WmjImage
+// }
 
 new Vue({
   router,
