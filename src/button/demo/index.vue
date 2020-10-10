@@ -55,8 +55,8 @@
     </div>
     <div class="card">
       <p>页面导航</p>
-      <wmj-button type="primary" url="/vant/mobile.html">URL 跳转</wmj-button>
-      <wmj-button type="primary" to="index">路由跳转</wmj-button>
+      <wmj-button type="primary" url="http://www.baidu.com">URL 跳转</wmj-button>
+      <wmj-button type="primary" to="cell">路由跳转</wmj-button>
     </div>
     <div class="card">
       <p>自定义颜色</p>

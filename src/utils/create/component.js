@@ -1,12 +1,16 @@
-import { isFunction } from '../utils.js'
+import { isFunction, formatName } from '../utils.js'
 import { SlotsMixin } from '../../mixins/slots'
-import WmjButton from '../../button'
+import { components, componentsStr } from '../../../site-mobile/installs'
+// import Button from '../../button'
 // import { camelize } from '../format/string'
 
+// vant源码此处传了两个参数，第一个为this，思考：this是在何处传进来的(故改为用自己的方法传入)
 // eslint-disable-next-line
 function install(Vue) {
   // const { name } = vueThis
-  Vue.component('wmj-button', WmjButton)
+  components.forEach((item, index) => {
+    Vue.component(formatName(componentsStr[index]), item)
+  })
   // Vue.component(camelize(`-${name}`), Vue)
 }
 
@@ -22,12 +26,15 @@ export function unifySlots(context) {
   })
 }
 
+// 函数式组件的处理
 function transformFunctionComponent(pure) {
   return {
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context) => pure(h, context.props, unifySlots(context), context)
+    render: (h, context) => {
+      return pure(h, context.props, unifySlots(context), context)
+    }
   }
 }
 
@@ -42,6 +49,7 @@ export function createComponent(name) {
       sfc.mixins.push(SlotsMixin)
     }
 
+    // name如何塞到install的第一个参数中
     sfc.name = name
     sfc.install = install
 

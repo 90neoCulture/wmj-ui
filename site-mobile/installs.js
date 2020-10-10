@@ -1,32 +1,23 @@
-// import WmjButton from '../src/button'
-// import WmjCell from '../src/cell'
-// import WmjCellGroup from '../src/cell-group'
-// import WmjIcon from '../src/icon'
-// import WmjImage from '../src/image'
+import Button from '../src/button'
+import Cell from '../src/cell'
+import CellGroup from '../src/cell-group'
+import Icon from '../src/icon'
+import Image from '../src/image'
 
-// function install(Vue) {
-//     const components = [
-//         WmjButton,
-//         WmjCell,
-//         WmjCellGroup,
-//         WmjIcon,
-//         WmjImage
-//     ]
+export const components = [
+  Button,
+  Cell,
+  CellGroup,
+  Icon,
+  Image
+]
 
-//     components.forEach(Component => {
-//         Vue.use(Component)
-//     })
-// }
-
-// if(typeof window !== 'undefined' && window.Vue) {
-//     install(window.Vue)
-// }
-
-// export {
-//     install,
-//     WmjButton,
-//     WmjCell,
-//     WmjCellGroup,
-//     WmjIcon,
-//     WmjImage
-// }
+export const componentsStr = [
+  'button',
+  'cell',
+  'cell-group',
+  'icon',
+  'image'
+]
+    
+    

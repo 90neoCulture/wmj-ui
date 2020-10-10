@@ -114,14 +114,27 @@ Locale.add({
   },
 });
 
+import { components } from './installs'
 
-import WmjButton from '../src/button'
+function myUse(Vue) {
+  components.forEach(item => {
+    Vue.use(item)
+  })
+}
+
+myUse(Vue)
+
+// import WmjButton from '../src/button'
 // import WmjCell from '../src/cell'
 // import WmjCellGroup from '../src/cell-group'
 // import WmjIcon from '../src/icon'
 // import WmjImage from '../src/image'
 
-Vue.use(WmjButton)
+// Vue.use(WmjButton)
+// Vue.use(WmjCell)
+// Vue.use(WmjCellGroup)
+// Vue.use(WmjIcon)
+// Vue.use(WmjImage)
 // function install(Vue) {
 //     const components = [
 //         WmjButton,

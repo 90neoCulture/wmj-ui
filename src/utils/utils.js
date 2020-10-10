@@ -1,9 +1,5 @@
-import myBem from './myBem'
-import { createComponent } from './create/component'
-
-export function createNamespace(name) {
-  name = `wmj-${name}`
-  return [createComponent(name), myBem(name)]
+export function formatName(name) {
+  return name = `wmj-${name}`
 }
 
 export function noop() {}
@@ -47,7 +43,7 @@ export function emit(context, eventName, ...args){
 
 export function handleRoute(ctx){
   const router = ctx.parent && ctx.parent.$router
-  const { to, replace, url} = ctx
+  const { to, replace, url} = ctx.props
   if(to){
     router[replace ? 'replace' : 'push'](to)
   } else if(url){
