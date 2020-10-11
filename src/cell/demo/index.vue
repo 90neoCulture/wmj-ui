@@ -44,7 +44,7 @@
       <!-- 使用 title 插槽来自定义标题 -->
       <template #title>
         <span class="custom-title">单元格</span>
-        <wmj-tag type="danger">标签</wmj-tag>
+        <!-- <wmj-tag type="danger">标签</wmj-tag> -->
       </template>
     </wmj-cell>
 

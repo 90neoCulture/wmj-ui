@@ -1,33 +1,44 @@
+import './index.scss';
 import { createNamespace } from "../utils/create"
 
 const [createComponent, myBem] = createNamespace('icon')
 
+function isImage(){
+  return name ? name.indexOf('/') === -1 : false
+}
+
 function Icon(h, props, slots, ctx) {
-  console.log(h, props, slots, ctx,myBem)
-  const haha = 'haha'
-  // const {
-  //   name,
-  //   // dot,
-  //   // badge,
-  //   // // info, //废弃
-  //   // color,
-  //   // size,
-  //   // classPrefix,
-  //   tag
-  // } = context.props
+  console.log(slots, ctx,myBem)
+  const {
+    name,
+    // dot,
+    // badge,
+    // // info, //废弃
+    // color,
+    // size,
+    // classPrefix
+  } = props
   
-  // function isImage(){
-  //   return name ? name.indexOf('/') === -1 : false
+  
+  
+  // const classes = {
+  //   `wmj-icon-${name}`,
   // }
   
-    // const classes = myBem([
-    //   name
-    // ])
-    return (
-    <tag 
-    // class={classes}
-    >{haha}</tag>
-    )
+  const onClick = () => {
+    if(!isImage()){
+      location.href = name
+    }
+  }
+
+  return (
+    <props.tag 
+    class={
+      `van-icon van-icon-${name}`
+    }
+    onClick={onClick}
+    ></props.tag>
+  )
 }
 
 Icon.props = {
