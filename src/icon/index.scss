@@ -1,2 +1,10 @@
 @import '../style/_variables.scss';
 @import '../style/icon.scss';
+
+.van-icon {
+  &__image {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+  }
+}

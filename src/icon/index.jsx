@@ -3,12 +3,12 @@ import { createNamespace } from "../utils/create"
 
 const [createComponent, myBem] = createNamespace('icon')
 
-function isImage(){
-  return name ? name.indexOf('/') === -1 : false
+function isImage(name){
+  return name ? name.indexOf('/') !== -1 : false
 }
 
 function Icon(h, props, slots, ctx) {
-  console.log(slots, ctx,myBem)
+  console.log( ctx)
   const {
     name,
     // dot,
@@ -16,28 +16,28 @@ function Icon(h, props, slots, ctx) {
     // // info, //废弃
     // color,
     // size,
-    // classPrefix
+    classPrefix
   } = props
   
-  
-  
-  // const classes = {
-  //   `wmj-icon-${name}`,
-  // }
-  
   const onClick = () => {
-    if(!isImage()){
+    if(isImage(name)){
       location.href = name
     }
   }
 
+  const imageIcon = isImage(name)
+
   return (
     <props.tag 
-    class={
-      `van-icon van-icon-${name}`
-    }
+    class={[
+      classPrefix,
+      imageIcon ? '' : `${classPrefix}-${name}`
+    ]}
     onClick={onClick}
-    ></props.tag>
+    >
+      { imageIcon && <img class={myBem('image')} src={name} alt=""/> }
+      
+    </props.tag>
   )
 }
 
