@@ -58,14 +58,14 @@ export default {
 .container{
   width: calc(100% - 200px);
   margin-left: 200px;
-  padding-top: 100px;
+  padding-top: 30px;
   .mobile-demo{
     width: 375px;
     height: 600px;
     font-size: 24px;
     overflow-x: hidden;
     overflow-y: auto;
-    margin: 0 auto;
+    margin-left: 100px;
     border: 1px solid #f2f5f7;
   }
 }
