@@ -6,7 +6,9 @@
       </li>
     </ul>
     <div class="container">
-      <router-view :key="$route.path"></router-view>
+      <div class="mobile-demo">
+        <router-view :key="$route.path"></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +58,15 @@ export default {
 .container{
   width: calc(100% - 200px);
   margin-left: 200px;
-  overflow-y: auto;
+  padding-top: 100px;
+  .mobile-demo{
+    width: 375px;
+    height: 600px;
+    font-size: 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto;
+    border: 1px solid #f2f5f7;
+  }
 }
 </style>

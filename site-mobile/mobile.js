@@ -124,6 +124,9 @@ function myUse(Vue) {
 
 myUse(Vue)
 
+import DemoBlock from './components/DemoBlock.vue'
+Vue.component('demo-block', DemoBlock)
+
 // import WmjButton from '../src/button'
 // import WmjCell from '../src/cell'
 // import WmjCellGroup from '../src/cell-group'

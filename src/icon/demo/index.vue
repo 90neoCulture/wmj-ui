@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div class="demo-icon">
     <van-tabs v-model="tab" sticky>
       <van-tab :title="t('demo')">
-        <div :title="t('basicUsage')">
+        <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
             <wmj-icon :name="demoIcon" />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
             <wmj-icon :name="demoImage" />
           </van-col>
-        </div>
+        </demo-block>
 
-        <div :title="t('badge')">
+        <demo-block :title="t('badge')">
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
             <wmj-icon :name="demoIcon" dot />
           </van-col>
@@ -21,25 +21,25 @@
           <van-col span="6" @click="copy(demoIcon, { badge: '99+' })">
             <wmj-icon :name="demoIcon" badge="99+" />
           </van-col>
-        </div>
+        </demo-block>
 
-        <div :title="t('color')">
+        <demo-block :title="t('color')">
           <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
             <wmj-icon :name="demoIcon" :color="BLUE" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
             <wmj-icon :name="demoIcon" :color="GREEN" />
           </van-col>
-        </div>
+        </demo-block>
 
-        <div :title="t('size')">
+        <demo-block :title="t('size')">
           <van-col span="6" @click="copy(demoIcon, { size: '40' })">
             <wmj-icon :name="demoIcon" size="40" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
             <wmj-icon :name="demoIcon" size="3rem" />
           </van-col>
-        </div>
+        </demo-block>
       </van-tab>
 
       <van-tab :title="t('basic')">
@@ -89,19 +89,8 @@ import { Tabs, Tab } from 'vant'
 Vue.use(Tabs).use(Tab)
 import { Col } from 'vant'
 Vue.use(Col)
-// import Tabs from 'vant/lib/tabs';
-// import Tab from 'vant/lib/tab';
-// import Col from 'vant/lib/col';
-// import 'vant/lib/tabs/style';
-// import 'vant/lib/tab/style';
-// import 'vant/lib/col/style';
 
 export default {
-  // components: {
-  //   'van-tabs': Tabs,
-  //   'van-tab': Tab,
-  //   'van-col': Col,
-  // },
   i18n: {
     'zh-CN': {
       title: '图标列表',
@@ -145,5 +134,54 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../style/_variables.scss';
 
+.demo-icon {
+  font-size: 0;
+
+  &-list {
+    box-sizing: border-box;
+    min-height: calc(100vh - 65px);
+    padding-top: 10px;
+  }
+
+  &-notify {
+    font-size: 13px;
+  }
+
+  .van-col {
+    display: inline-block;
+    float: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 36px;
+      margin: -4px 0 4px;
+      padding: 0 5px;
+      color: map-get($colors, 'gray-7' );
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+
+  .van-icon {
+    margin: 16px 0 16px;
+    color: $text-color;
+    font-size: 32px;
+  }
+
+  .van-tab__pane {
+    width: auto;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+}
 </style>
