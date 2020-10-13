@@ -58,7 +58,7 @@
       <wmj-button type="primary" block>{{ t('blockElement') }}</wmj-button>
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('router')">
+    <demo-block :title="t('router')">
       <wmj-button
         :text="t('urlRoute')"
         type="primary"

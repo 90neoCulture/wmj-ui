@@ -1,7 +1,7 @@
 <template>
   <div class="demo-icon">
     <van-tabs v-model="tab" sticky>
-      <van-tab :title="t('demo')">
+      <van-tab :title="t('demo')" >
         <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
             <wmj-icon :name="demoIcon" />
@@ -183,5 +183,9 @@ export default {
     background-color: #fff;
     border-radius: 12px;
   }
+}
+.van-tabs__content{
+    height: 556px;
+    overflow: auto;
 }
 </style>
