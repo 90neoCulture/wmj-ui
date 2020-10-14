@@ -3,13 +3,15 @@ import Cell from '../src/cell'
 import CellGroup from '../src/cell-group'
 import Icon from '../src/icon'
 import Image from '../src/image'
+import Info from '../src/info'
 
 export const components = [
   Button,
   Cell,
   CellGroup,
   Icon,
-  Image
+  Image,
+  Info
 ]
 
 export const componentsStr = [
@@ -17,7 +19,8 @@ export const componentsStr = [
   'cell',
   'cell-group',
   'icon',
-  'image'
+  'image',
+  'info'
 ]
     
     

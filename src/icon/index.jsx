@@ -1,5 +1,7 @@
 import './index.scss';
 import { createNamespace } from "../utils/create"
+import { isDef } from "../utils/utils"
+import Info from '../info'
 
 const [createComponent, myBem] = createNamespace('icon')
 
@@ -11,9 +13,9 @@ function Icon(h, props, slots, ctx) {
   console.log( ctx)
   const {
     name,
-    // dot,
-    // badge,
-    // // info, //废弃
+    dot,
+    badge,
+    info, //废弃
     // color,
     // size,
     classPrefix
@@ -36,7 +38,10 @@ function Icon(h, props, slots, ctx) {
     onClick={onClick}
     >
       { imageIcon && <img class={myBem('image')} src={name} alt=""/> }
-      
+      <Info
+        dot={dot}
+        info={isDef(badge) ? badge : info}
+      />
     </props.tag>
   )
 }
